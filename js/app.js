@@ -90,6 +90,7 @@ const displayPhones = (phones) => {
 };
 // LOAD PHONE DETAILS ADDED
 const loadPhonesDetails = (detail) => {
+  startSpiner("block");
   fetch(`https://openapi.programming-hero.com/api/phone/${detail}`)
     .then((res) => res.json())
     .then((data) => displayPhoneDetails(data));
@@ -97,8 +98,9 @@ const loadPhonesDetails = (detail) => {
 // ADDED PHONE FOR DISPLAY
 const displayPhoneDetails = (phoneDetail) => {
   const phone = phoneDetail.data;
+
   phoneDetails.textContent = "";
-  window.scrollTo(0, 200);
+  window.scrollTo(0, 0);
   const div = document.createElement("div");
   div.classList = "col-md-8 mb-3 rounded";
   div.style.maxWidth = "700px";
@@ -172,6 +174,7 @@ const displayPhoneDetails = (phoneDetail) => {
   </div>`;
 
   phoneDetails.appendChild(div);
+  startSpiner("none");
 };
 
 /* if (phone.others === undefined) {

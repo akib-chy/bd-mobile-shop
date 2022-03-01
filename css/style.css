@@ -14,3 +14,21 @@
 #show-more {
   display: none;
 }
+.card-btn {
+  padding: 5px;
+  font-size: 13px;
+  background-color: rgba(128, 128, 128, 0.233);
+  border: none;
+}
+.card-icon {
+  color: rgba(199, 13, 13, 0.753);
+  cursor: pointer;
+  margin-top: 10px;
+}
+.log-in,
+.register {
+  text-decoration: none;
+  font-size: 13px;
+  color: black;
+  margin-top: 8px;
+}
