@@ -5,11 +5,13 @@ const startSpiner = (spiner) => {
 // LOAD PHONES DATA AND PHONES LINK ADDED
 
 const loadPhones = () => {
-  const searchInput = document.getElementById("search-input");
-  const searchInputText = searchInput.value;
   startSpiner("block");
+  const searchInput = document.getElementById("search-input");
+
+  const searchInputText = searchInput.value;
   searchInput.value = "";
   if (searchInputText === "") {
+    startSpiner("none");
     return alert("hello");
   }
   fetch(
@@ -22,18 +24,20 @@ const loadPhones = () => {
 // SHOW DISPLAY PHONE DATA
 
 const displayPhones = (phones) => {
-  console.log(phones);
+  const phoneDetails = document.getElementById("phone-details");
   const phoneItem = document.getElementById("phone-item");
   const phoneSlice = phones.slice(0, 20);
   const itemNoneAlert = document.getElementById("danger1");
   if (phones.length === 0) {
-    itemNoneAlert.style.display = "block";
+    phoneDetails.textContent = "";
     phoneItem.textContent = "";
     startSpiner("none");
+    itemNoneAlert.style.display = "block";
     return itemNoneAlert;
   } else {
     document.getElementById("show-more").style.display = "block";
     itemNoneAlert.style.display = "none";
+    phoneDetails.textContent = "";
     phoneItem.textContent = "";
     for (const phone of phoneSlice) {
       const div = document.createElement("div");
@@ -132,7 +136,7 @@ const displayPhoneDetails = (phoneDetail) => {
     phoneDetails.appendChild(div);
     return;
   }
-  console.log(phone.others);
+  console.log(phone.mainFeatures.sensors[0]);
   div.innerHTML = `
   <div class="card h-100">
     <img src="${phone.image}" class="card-img-top" alt="..." />
@@ -153,7 +157,7 @@ const displayPhoneDetails = (phoneDetail) => {
       <td>${phone.releaseDate}</td>
       </tr>
       <tr class="border">
-      <td class=""> Connectivity</td>
+      <td> Connectivity</td>
       </tr>
     <tr class="border">
       <th class="border-end">Display Size</th>
@@ -187,6 +191,33 @@ const displayPhoneDetails = (phoneDetail) => {
       <th class="border-end">USB</th>
       <td >${phone.others.USB}</td>
       </tr>
+      <tr class="border">
+      <th class=""> Sensors</th>
+      </tr>
+    <tr class="border">
+    <td class="border-end"></td>
+      <td >${phone.mainFeatures.sensors[0]}</td>
+      </tr>
+    <tr class="border">
+      <td class="border-end"></td>
+      <td>${phone.mainFeatures.sensors[1]}</td>
+      </tr>
+    <tr class="border">
+    <td class="border-end"></td>
+      <td>${phone.mainFeatures.sensors[2]}</td>
+      </tr>
+      <tr class="border">
+      <td class="border-end"></td>
+        <td>${phone.mainFeatures.sensors[3]}</td>
+        </tr>
+      <tr class="border">
+      <td class="border-end"></td>
+        <td>${phone.mainFeatures.sensors[4]}</td>
+        </tr>
+      <tr class="border">
+      <td class="border-end"></td>
+        <td>${phone.mainFeatures.sensors[5]}</td>
+        </tr>
   </tbody>
 </table>
     </div>
