@@ -22,6 +22,7 @@ const loadPhones = () => {
 // SHOW DISPLAY PHONE DATA
 
 const displayPhones = (phones) => {
+  console.log(phones);
   const phoneItem = document.getElementById("phone-item");
   const phoneSlice = phones.slice(0, 20);
   const itemNoneAlert = document.getElementById("danger1");
@@ -31,11 +32,10 @@ const displayPhones = (phones) => {
     startSpiner("none");
     return itemNoneAlert;
   } else {
+    document.getElementById("show-more").style.display = "block";
     itemNoneAlert.style.display = "none";
     phoneItem.textContent = "";
     for (const phone of phoneSlice) {
-      // console.log(phone);
-      // console.log(phone.slug);
       const div = document.createElement("div");
       div.classList = "col";
       div.innerHTML = ` <div class="col">
@@ -44,13 +44,35 @@ const displayPhones = (phones) => {
                         <div class="card-body">
                       <h5 class="card-title">${phone.phone_name}</h5>
                        <p class="card-text">${phone.brand}</p>
-                    <button onclick="loadPhonesDetails('${phone.slug}')" class="btn btn-outline-primary">Details</button>
+                    <div class="d-grid">
+                    <button onclick="loadPhonesDetails('${phone.slug}')" class="btn btn-outline-primary btn-block">Details</button>
+                    </div>
                    </div>
                    </div>
                   </div>`;
       phoneItem.appendChild(div);
     }
     startSpiner("none");
+  }
+  // SHOW MORE ITEM
+  for (const phone of phones) {
+    document.getElementById("show-more").addEventListener("click", () => {
+      const div = document.createElement("div");
+      div.classList = "col";
+      div.innerHTML = ` <div class="col">
+                        <div class="card h-100">
+                      <img src="${phone.image}" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                      <h5 class="card-title">${phone.phone_name}</h5>
+                       <p class="card-text">${phone.brand}</p>
+                    <div class="d-grid">
+                    <button onclick="loadPhonesDetails('${phone.slug}')" class="btn btn-outline-primary btn-block">Details</button>
+                    </div>
+                   </div>
+                   </div>
+                  </div>`;
+      phoneItem.appendChild(div);
+    });
   }
 };
 // LOAD PHONE DETAILS ADDED
