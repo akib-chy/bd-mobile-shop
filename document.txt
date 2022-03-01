@@ -1,0 +1,22 @@
+01/ kono phone search diya na paila error masseg dita hobe.
+02/ ekta card a 3ta information thakbe
+03/ card a first a img thakbe and 2nd a phone er nam thakbe and 3rd a phone er brand likte hobe.
+04/ 3colam er card thakbe er protita card ekta button thakbe and button ckick korle oitar information dekhabe information ta search box er nica dekhaita hobe
+05/ details a click korle first a phone er img dekhai ta hobe and jaiphone golar relese date ase oigola dekhaita hobe jaita phone er namer nica dekhaita hobe jodi kono phone er realese date na thake taile error masseg dita hobe
+06/ phone er jaigola feture ase oigola dekhaita hobe
+07/ site responsive korte hobe pc and mobile device er jonno tablet er jonnon korte hobena
+08/ dasktop a 3kolam thakbe and mobile 1colame thakbe
+09/ jaikhane function use korbo oikhane arrow function use korte hobe
+10/ github a minimum 6bar code push korte hobe
+
+
+
+bonas part 
+
+01/ phone a ekta sensor ase oikhaner details gola dekhaita hobe and same other er information golao dekhabo
+02/ search result a only 20ta phone dekhabo er bahi na kinto 20tar kom hoita pare
+
+optional 
+
+01/ nisa show all ekta button thakbe jaithate click korle sob phone dekhai diba
+02/ load howar somoi ekta spinar add korbo
