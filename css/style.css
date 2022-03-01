@@ -1,19 +1,4 @@
-#danger1 {
-  display: none;
-  font-size: 20px;
-  font-weight: 600;
-}
-#danger2 {
-  display: none;
-  font-size: 20px;
-  font-weight: 600;
-}
-#spiner {
-  display: none;
-}
-#show-more {
-  display: none;
-}
+/* HEADER EXTRA PART STYLED */
 .card-btn {
   padding: 5px;
   font-size: 13px;
@@ -32,9 +17,23 @@
   color: black;
   margin-top: 8px;
 }
-
-@media only screen and(max-width: 450px) {
-  .display-none {
-    display: none;
-  }
+/* WARNING NUMBER 01 STYLED */
+#danger1 {
+  display: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+/* WARNING NUMBER 02 STYLED */
+#danger2 {
+  display: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+/* SPINER STYLED */
+#spiner {
+  display: none;
+}
+/* SHOW MORE PHONE BUTTON STYLED */
+#show-more {
+  display: none;
 }
