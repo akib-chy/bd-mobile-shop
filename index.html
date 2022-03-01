@@ -22,7 +22,7 @@
     <!-- START HEADER SECTION -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-          <div class="container">
+          <div class="container-fluid">
             <a class="navbar-brand" href="#"
               ><span class="text-danger h3">Bd Mobile</span>
               <span class="text-success">Shop</span>
@@ -42,7 +42,7 @@
                 Search
               </button>
             </div>
-            <div class="d-flex justify-content-center align-item-center">
+            <div class="d-flex justify-content-center align-item-center display-none">
               <a class="me-2 card-icon">
                 <i class="fa-solid fa-cart-shopping"></i
               ></a>
@@ -72,38 +72,23 @@
       </p>
     </header>
     <!-- END HEADER SECTION -->
+
     <!-- STAER MAIN SECTION -->
     <main class="">
-      <!-- START SEARCH INPUT AND BUTTON -->
-      <div class="container">
-        <!-- <div class="input-group mb-3 w-50 mx-auto mt-4 mb-5"> -->
-        <!-- id="search-input" -->
-        <!-- <input
-            type="text"
-            class="form-control"
-            placeholder="Search your Phone Name"
-          /> -->
-
-        <!-- onclick="loadPhones()" -->
-        <!-- <button class="btn btn-outline-success" type="button">Search</button> -->
-        <!-- </div> -->
-        <!-- <p id="danger1" class="text-center text-danger">
-          Search Result Not Found
-        </p> -->
-      </div>
-      <!-- END SEARCH INPUT AND BUTTON -->
       <!-- START DETAILS PHONE ON DISPLAY SECTION -->
       <div class="container">
-        <div id="phone-details" class="row d-flex justify-content-center mt-4">
-          <div></div>
+        <div  class="row d-flex justify-content-center mt-4">
+          <div id="phone-details"></div>
         </div>
       </div>
       <!-- END DETAILS PHONE ON DISPLAY SECTION -->
+
       <!-- START DISPLAY PHONE WITH JAVASCRIPT SECTION -->
       <section class="container mt-5">
         <div id="phone-item" class="row row-cols-1 row-cols-md-3 g-4"></div>
       </section>
       <!-- END DISPLAY PHONE WITH JAVASCRIPT SECTION -->
+
       <!-- SPINAR ADDED -->
       <div id="spiner" class="loadingio-spinner-spinner-rmfaya0ffd">
         <div class="ldio-50jxho0al1h">
@@ -127,6 +112,7 @@
       </div>
     </main>
     <!-- END MAIN SECTION -->
+
     <!-- BOOTSTRAP JS FILE ADDED -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

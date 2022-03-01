@@ -16,7 +16,7 @@ const loadPhones = () => {
 
   const searchInputText = searchInput.value;
   searchInput.value = "";
-  if (searchInputText === "" || searchInputText === !Number) {
+  if (searchInputText === "" || !isNaN(searchInputText)) {
     itemNoneAlert1.style.display = "none";
     itemNoneAlert2.style.display = "block";
     startSpiner("none");
@@ -102,10 +102,10 @@ const displayPhoneDetails = (phoneDetail) => {
   phoneDetails.textContent = "";
   window.scrollTo(0, 0);
   const div = document.createElement("div");
-  div.classList = "col-md-8 mb-3 rounded";
+  div.classList = "col-md-8 col-12 mb-3 rounded";
   div.style.maxWidth = "700px";
   div.innerHTML = `
-  <div class="card h-100 mt-5">
+  <div class="card h-100 mt-5 container">
     <img src="${
       phone.image
     }" class="card-img-top w-50 mx-auto mt-4" alt="..." />
@@ -125,7 +125,7 @@ const displayPhoneDetails = (phoneDetail) => {
       </tr>
     <tr class="border">
       <th class="border-end">First Release</th>
-      <td>${phone.releaseDate || "No Relese Date"}</td>
+      <td>${phone.releaseDate || "Relese Date Not Avaliable"}</td>
       </tr>
       <tr class="border">
       <td> Connectivity</td>
@@ -163,8 +163,9 @@ const displayPhoneDetails = (phoneDetail) => {
       <td >${phone.others?.USB || "No Other Feture"}</td>
       </tr>
       <tr class="border">
-      <th class=""> Sensors</th>
-      </tr>
+        <th class="border-end">Sensors</th>
+        <td >${phone.mainFeatures.sensors.map((sersor) => sersor)}</td>
+        </tr>
   </tbody>
 </table>
       <div class="d-flex justify-content-center mt-4">
@@ -176,47 +177,3 @@ const displayPhoneDetails = (phoneDetail) => {
   phoneDetails.appendChild(div);
   startSpiner("none");
 };
-
-/* if (phone.others === undefined) {
-    div.innerHTML = `<div class="card h-100">
-    <img src="${phone.image}" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title text-center mt-3 mb-3">${phone.name} Full Specifications</h5>
-      <table class="table card-text">
-  <tbody class="border">
-    <tr class="border">
-      <th class="border-end">Name</th>
-      <td>${phone.name}</td>
-      <td></td>
-      </tr>
-    <tr class="border">
-      <th class="border-end">Brand</th>
-      <td>${phone.brand}</td>
-      </tr>
-    <tr class="border">
-      <th class="border-end">First Release</th>
-      <td>${phone.releaseDate}</td>
-      </tr>
-    <tr class="border">
-      <td class=""> Connectivity</td>
-      </tr>
-    <tr class="border">
-      <th class="border-end">Display Size</th>
-      <td >${phone.mainFeatures.displaySize}</td>
-      </tr>
-    <tr class="border">
-      <th class="border-end">Memory</th>
-      <td >${phone.mainFeatures.memory}</td>
-      </tr>
-    <tr class="border">
-      <th class="border-end">Others</th>
-      <td >No Other Feturs</td>
-      </tr>
-  </tbody>
-</table>
-    </div>
-  </div>`;
-    phoneDetails.appendChild(div);
-    return;
-  } */
-// const map = phone.mainFeatures.sensors.map(hello);
