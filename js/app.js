@@ -76,6 +76,7 @@ const displayPhones = (phones) => {
   for (const phone of phones) {
     document.getElementById("show-more").addEventListener("click", () => {
       const div = document.createElement("div");
+
       div.classList = "col";
       div.innerHTML = ` <div class="col">
                         <div class="card h-100">

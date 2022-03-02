@@ -28,7 +28,7 @@
               <span class="text-success">Shop</span>
             </a>
             <!-- ADDED SEARCH INPUT AND BUTTON -->
-            <div class="d-flex w-50">
+            <div class="d-flex w-50 ms-auto">
               <input
                 id="search-input"
                 class="form-control me-2"
@@ -43,7 +43,7 @@
                 Search
               </button>
             </div>
-            <div class="d-flex justify-content-center align-item-center ms-auto mt-1">
+            <div class="d-flex justify-content-center align-item-center ms-auto mt-1 d-none d-lg-block">
               <a class="me-2 card-icon">
                 <i class="fa-solid fa-cart-shopping"></i
               ></a>
@@ -56,10 +56,10 @@
                   <span class="visually-hidden"></span>
                 </span>
               </button>
-              <a class="log-in ms-4" href=""
+              <a class="log-in ms-4" data-bs-target="#login" data-bs-toggle="modal" href=""
                 ><i class="fa-solid fa-unlock"></i> Log In</a
               >
-              <a class="register ms-2" href=""
+              <a class="register ms-2" data-bs-target="#register" data-bs-toggle="modal" href=""
                 ><i class="fa-solid fa-key"></i></i> Register</a
               >
             </div>
@@ -73,6 +73,72 @@
       </p>
     </header>
     <!-- END HEADER SECTION -->
+    <!-- START MODAL LOGIN AND REGISTER SECTION -->
+<!--Login Modal -->
+<div class="modal fade" id="login" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="get">
+          <label for="nameEmail">Username or email address *</label>
+          <input type="text" id="nameEmail" class="form-control mt-1">
+          <label class="mt-4" for="pass">Password *</label>
+          <input type="password" id="pass" class="form-control mt-1 mb-3">
+          <a href="#" class="text-start">Forgot Password?</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal fade" id="register" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">REGISTER</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="get">
+          <!-- REGISTER NAME INPUT-->
+          <label for="name">Name *</label>
+          <input type="text" id="name" class="form-control mt-1">
+          <!-- REGISTER EMAIL INPUT-->
+          <label class="mt-4" for="email">Email *</label>
+          <input type="email" id="email" class="form-control mt-1 mb-3">
+          <!-- REGISTER PHONE INPUT -->
+          <label class="mt-4" for="phone">Phone *</label>
+          <input type="tel" id="phone" class="form-control mt-1 mb-3">
+          <!-- CONFIRM PASS INPUT-->
+          <h6 class="text-muted mt-4 pt-3 pb-3 border-top border-bottom">YOUR PASSWORD</h6>
+          <label class="mt-4" for="repass">Password *</label>
+          <input type="password" id="repass" class="form-control mt-1 mb-1">
+          <label class="mt-4" for="conrepass">Confirm password *</label>
+          <input type="password" id="conrepass" class="form-control mt-1 mb-3">
+          <div class="d-flex align-content-center justify-content-center">
+            <span><input type="checkbox" class="form control mt-2 me-1" id="chekbox"></span>
+          <label for="chekbox"><small>I accept privacy policy</small>
+            <a href="#"><small>(read)</small></a>
+          </div>
+          </label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">REGISTER</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
     <!-- STAER MAIN SECTION -->
     <main class="">
