@@ -24,6 +24,7 @@ const loadPhones = () => {
     itemNoneAlert2.style.display = "block";
     startSpiner("none");
     phoneItem.textContent = "";
+    document.getElementById("show-more").style.display = "none";
     return itemNoneAlert2;
   }
   fetch(
@@ -45,9 +46,10 @@ const displayPhones = (phones) => {
     startSpiner("none");
     itemNoneAlert1.style.display = "block";
     itemNoneAlert2.style.display = "none";
+    document.getElementById("show-more").style.display = "none";
     return itemNoneAlert1;
   } else {
-    document.getElementById("show-more").style.display = "block";
+    // document.getElementById("show-more").style.display = "block";
     itemNoneAlert1.style.display = "none";
     itemNoneAlert2.style.display = "none";
     phoneDetails.textContent = "";
@@ -73,12 +75,15 @@ const displayPhones = (phones) => {
   }
 
   // CLICK SHOW MORE PHONE BUTTON FUNNCTION ADD
-  for (const phone of phones) {
-    document.getElementById("show-more").addEventListener("click", () => {
+  if (phones.length >= 20) {
+    document.getElementById("show-more").style.display = "block";
+    for (const phone of phones) {
       const div = document.createElement("div");
 
-      div.classList = "col";
-      div.innerHTML = ` <div class="col">
+      document.getElementById("show-more").addEventListener("click", () => {
+        div.textContent = "";
+        div.classList = "col";
+        div.innerHTML = ` <div class="col">
                         <div class="card h-100">
                       <img src="${phone.image}" class="card-img-top" alt="..." />
                         <div class="card-body">
@@ -90,8 +95,11 @@ const displayPhones = (phones) => {
                    </div>
                    </div>
                   </div>`;
-      phoneItem.appendChild(div);
-    });
+        phoneItem.appendChild(div);
+      });
+    }
+  } else {
+    document.getElementById("show-more").style.display = "none";
   }
 };
 // LOAD PHONE DETAILS ADD
@@ -108,10 +116,10 @@ const displayPhoneDetails = (phoneDetail) => {
   phoneDetails.textContent = "";
   window.scrollTo(0, 0);
   const div = document.createElement("div");
-  div.classList = "col mb-3 rounded";
+  div.classList = "col rounded";
   div.style.maxWidth = "700px";
   div.innerHTML = `
-      <div class="card h-100 mt-5 container">
+      <div class="card h-100 mt-5 shadow p-3  pt-4 bg-body rounded">
        <img src="${
          phone.image
        }" class="card-img-top w-50 mx-auto mt-4" alt="..." />
