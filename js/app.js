@@ -154,32 +154,33 @@ const displayPhoneDetails = (phoneDetail) => {
   </tr>
     <tr>
     <th scope="row">WLAN</th>
-    <td colspan="2">${phone.others?.WLAN || "No Other Feture"}</td>
+    <td colspan="2">${phone.others?.WLAN || "Others Fetures Not Available"}</td>
   </tr>
     <tr>
     <th scope="row">GPS</th>
-    <td colspan="2">${phone.others?.GPS || "No Other Feture"}</td>
+    <td colspan="2">${phone.others?.GPS || "Others Fetures Not Available"}</td>
   </tr>
     <tr>
     <th scope="row">NFC</th>
-    <td colspan="2">${phone.others?.NFC || "No Other Feture"}</td>
+    <td colspan="2">${phone.others?.NFC || "Others Fetures Not Available"}</td>
   </tr>
     <tr>
     <th scope="row">Radio</th>
-    <td colspan="2">${phone.others?.Radio || "No Other Feture"}</td>
+    <td colspan="2">${
+      phone.others?.Radio || "Others Fetures Not Available"
+    }</td>
   </tr>
     <tr>
     <th scope="row">USB</th>
-    <td colspan="2">${phone.others?.USB || "No Other Feture"}</td>
+    <td colspan="2">${phone.others?.USB || "Others Fetures Not Available"}</td>
   </tr>
   </tbody>
 </table>
 <p><h5 class="d-inline"> Sensors: </h5> ${phone.mainFeatures.sensors.map(
     (sersor) => sersor
   )}</p>
-  
       <div class="d-flex justify-content-center mt-4">
-      <button class="btn btn-warning btn-end">Buy Now</button>
+      <button data-bs-target="#register" data-bs-toggle="modal" class="btn btn-warning btn-end">Buy Now</button>
       </div>
     </div>
   </div>`;
