@@ -112,7 +112,6 @@ const loadPhonesDetails = (detail) => {
 // ADDED PHONE ON DISPLAY ADD
 const displayPhoneDetails = (phoneDetail) => {
   const phone = phoneDetail.data;
-
   phoneDetails.textContent = "";
   window.scrollTo(0, 0);
   const div = document.createElement("div");
@@ -141,50 +140,79 @@ const displayPhoneDetails = (phoneDetail) => {
       <th scope="row">First Release</th>
       <td colspan="2">${phone.releaseDate || "Relese Date Not Avaliable"}</td>
     </tr>
-    <tr>
-      <td> Connectivity</td>
-    </tr>
+    </tbody>
+    </table>
+    <table class="table table-striped table-hover table-bordered">
+    <tbody>
+    <h5 class="ms-2">Connectivity</h5>
     <tr>
     <th scope="row">Display Size</th>
     <td colspan="2">${phone.mainFeatures.displaySize}</td>
   </tr>
     <tr>
     <th scope="row">Memory</th>
-    <td colspan="2">${phone.mainFeatures.memory}</td>
+    <td colspan="2"> ${phone.mainFeatures.memory}</td>
   </tr>
     <tr>
     <th scope="row">WLAN</th>
-    <td colspan="2">${phone.others?.WLAN || "Others Fetures Not Available"}</td>
+    <td colspan="2">${
+      phone.others?.WLAN || "✖ Others Fetures Not Available"
+    }</td>
   </tr>
     <tr>
     <th scope="row">GPS</th>
-    <td colspan="2">${phone.others?.GPS || "Others Fetures Not Available"}</td>
+    <td colspan="2"> ${
+      phone.others?.GPS || "✖ Others Fetures Not Available"
+    }</td>
   </tr>
     <tr>
     <th scope="row">NFC</th>
-    <td colspan="2">${phone.others?.NFC || "Others Fetures Not Available"}</td>
+    <td colspan="2"> ${
+      phone.others?.NFC || "✖ Others Fetures Not Available"
+    }</td>
   </tr>
     <tr>
     <th scope="row">Radio</th>
-    <td colspan="2">${
-      phone.others?.Radio || "Others Fetures Not Available"
+    <td colspan="2">✖ ${
+      phone.others?.Radio || "✖ Others Fetures Not Available"
     }</td>
   </tr>
     <tr>
     <th scope="row">USB</th>
-    <td colspan="2">${phone.others?.USB || "Others Fetures Not Available"}</td>
+    <td colspan="2"> ${
+      phone.others?.USB || "✖ Others Fetures Not Available"
+    }</td>
   </tr>
   </tbody>
 </table>
-<p><h5 class="d-inline"> Sensors: </h5> ${phone.mainFeatures.sensors.map(
-    (sersor) => sersor
-  )}</p>
+<table class="table table-striped table-hover table-bordered">
+<tbody id="sensor">
+<tr>
+<h5 class="ms-2">Sensors</h5>
+</tr>
+</tbody>
+</table>
       <div class="d-flex justify-content-center mt-4">
       <button data-bs-target="#register" data-bs-toggle="modal" class="btn btn-warning btn-end">Buy Now</button>
       </div>
     </div>
   </div>`;
+  console.log(phone.mainFeatures.sensors);
 
   phoneDetails.appendChild(div);
+  const ul = document.getElementById("sensor");
+  phone.mainFeatures.sensors.forEach((sensor) => {
+    const li = document.createElement("tr");
+    li.innerHTML = `
+    <th scope="row">✅</th>
+    <td colspan="2"> ${sensor}</td>`;
+    ul.appendChild(li);
+  });
   startSpiner("none");
 };
+
+{
+  /* <p><h5 class="d-inline"> Sensors: </h5> ${phone.mainFeatures.sensors.map(
+    (sersor) => sersor
+  )}</p> */
+}
