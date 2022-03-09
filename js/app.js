@@ -118,7 +118,7 @@ const displayPhoneDetails = (phoneDetail) => {
   div.classList = "col rounded";
   div.style.maxWidth = "700px";
   div.innerHTML = `
-      <div class="card h-100 mt-5 shadow p-3  pt-4 bg-body rounded">
+      <div class="card h-75% mt-5 shadow p-3  pt-4 bg-body" style="border-radius: 30px;">
        <img src="${
          phone.image
        }" class="card-img-top w-50 mx-auto mt-4" alt="..." />
@@ -174,7 +174,7 @@ const displayPhoneDetails = (phoneDetail) => {
     <tr>
     <th scope="row">Radio</th>
     <td colspan="2">✖ ${
-      phone.others?.Radio || "✖ Others Fetures Not Available"
+      phone.others?.Radio || "Others Fetures Not Available"
     }</td>
   </tr>
     <tr>
@@ -193,7 +193,7 @@ const displayPhoneDetails = (phoneDetail) => {
 </tbody>
 </table>
       <div class="d-flex justify-content-center mt-4">
-      <button data-bs-target="#register" data-bs-toggle="modal" class="btn btn-warning btn-end">Buy Now</button>
+      <button data-bs-target="#register" data-bs-toggle="modal" class="btn btn-warning mt-3">Buy Now</button>
       </div>
     </div>
   </div>`;
