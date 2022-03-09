@@ -156,19 +156,25 @@ const displayPhoneDetails = (phoneDetail) => {
     <tr>
     <th scope="row">WLAN</th>
     <td colspan="2">${
-      phone.others?.WLAN || "✖ Others Fetures Not Available"
+      phone.others?.WLAN
+        ? "✅ " + phone.others?.WLAN
+        : "✖ Others Fetures Not Available"
     }</td>
   </tr>
     <tr>
     <th scope="row">GPS</th>
     <td colspan="2"> ${
-      phone.others?.GPS || "✖ Others Fetures Not Available"
+      phone.others?.GPS
+        ? "✅ " + phone.others?.GPS
+        : "✖ Others Fetures Not Available"
     }</td>
   </tr>
     <tr>
     <th scope="row">NFC</th>
     <td colspan="2"> ${
-      phone.others?.NFC || "✖ Others Fetures Not Available"
+      phone.others?.NFC
+        ? "✅ " + phone.others?.NFC
+        : "✖ Others Fetures Not Available"
     }</td>
   </tr>
     <tr>
@@ -180,7 +186,9 @@ const displayPhoneDetails = (phoneDetail) => {
     <tr>
     <th scope="row">USB</th>
     <td colspan="2"> ${
-      phone.others?.USB || "✖ Others Fetures Not Available"
+      phone.others?.USB
+        ? " ✅ " + phone.others?.USB
+        : "✖ Others Fetures Not Available"
     }</td>
   </tr>
   </tbody>
